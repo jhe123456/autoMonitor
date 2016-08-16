@@ -1,2 +1,3 @@
-ÔËĞĞÏµÍ³ ubuntu16.04 tls Êı¾İ¿â mysql 5.7.13 redis3.0.7 ·şÎñÆ÷ tomcat 7.0.70
+ï»¿è¿è¡Œç³»ç»Ÿ ubuntu16.04 tls æ•°æ®åº“ mysql 5.7.13 redis3.0.7 æœåŠ¡å™¨ tomcat 7.0.70
 spring+springmvc+mybatis
+test ä¸­æ–‡
