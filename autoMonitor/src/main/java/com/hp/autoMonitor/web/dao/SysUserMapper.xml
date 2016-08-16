@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hp.autoMonitor.web.dao.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.hp.autoMonitor.web.model.SysUser" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="full_name" property="fullName" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+    <result column="staff_id" property="staffId" jdbcType="VARCHAR" />
+    <result column="work_email" property="workEmail" jdbcType="VARCHAR" />
+    <result column="mobileno1" property="mobileno1" jdbcType="VARCHAR" />
+    <result column="work_tel" property="workTel" jdbcType="VARCHAR" />
+    <result column="mobileno2" property="mobileno2" jdbcType="VARCHAR" />
+    <result column="work_tel_ext" property="workTelExt" jdbcType="VARCHAR" />
+    <result column="personal_email" property="personalEmail" jdbcType="VARCHAR" />
+    <result column="work_address" property="workAddress" jdbcType="VARCHAR" />
+    <result column="home_tel" property="homeTel" jdbcType="VARCHAR" />
+    <result column="home_address" property="homeAddress" jdbcType="VARCHAR" />
+    <result column="expcont_person" property="expcontPerson" jdbcType="VARCHAR" />
+    <result column="expcont_psn_tel" property="expcontPsnTel" jdbcType="VARCHAR" />
+    <result column="data_from" property="dataFrom" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="online_status" property="onlineStatus" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="degree1" property="degree1" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="VARCHAR" />
+    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
+    <result column="create_dt" property="createDt" jdbcType="DATE" />
+    <result column="create_id" property="createId" jdbcType="BIGINT" />
+    <result column="modify_id" property="modifyId" jdbcType="BIGINT" />
+    <result column="modify_by" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="modify_dt" property="modifyDt" jdbcType="DATE" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+  </resultMap>
+   <sql id="Base_Column_List">
+ id, full_name, birthday, 
+      user_name, user_password, staff_id, 
+      work_email, mobileno1, work_tel, 
+      mobileno2, work_tel_ext, personal_email, 
+      work_address, home_tel, home_address, 
+      expcont_person, expcont_psn_tel, data_from, 
+      remark, online_status, gender, 
+      degree1, delete_flag, order_no, 
+      create_dt, create_id, modify_id, 
+      modify_by, modify_dt, create_by
+  </sql>
+  
+  <insert id="insert" parameterType="com.hp.autoMonitor.web.model.SysUser" >
+    insert into SYS_USER (
+      <include refid="Base_Column_List" />
+      )
+    values (#{id,jdbcType=INTEGER}, #{fullName,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{staffId,jdbcType=VARCHAR}, 
+      #{workEmail,jdbcType=VARCHAR}, #{mobileno1,jdbcType=VARCHAR}, #{workTel,jdbcType=VARCHAR}, 
+      #{mobileno2,jdbcType=VARCHAR}, #{workTelExt,jdbcType=VARCHAR}, #{personalEmail,jdbcType=VARCHAR}, 
+      #{workAddress,jdbcType=VARCHAR}, #{homeTel,jdbcType=VARCHAR}, #{homeAddress,jdbcType=VARCHAR}, 
+      #{expcontPerson,jdbcType=VARCHAR}, #{expcontPsnTel,jdbcType=VARCHAR}, #{dataFrom,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{onlineStatus,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{degree1,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=VARCHAR}, #{orderNo,jdbcType=INTEGER}, 
+      #{createDt,jdbcType=DATE}, #{createId,jdbcType=BIGINT}, #{modifyId,jdbcType=BIGINT}, 
+      #{modifyBy,jdbcType=VARCHAR}, #{modifyDt,jdbcType=DATE}, #{createBy,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hp.autoMonitor.web.model.SysUser" >
+    insert into SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fullName != null" >
+        full_name,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="userPassword != null" >
+        user_password,
+      </if>
+      <if test="staffId != null" >
+        staff_id,
+      </if>
+      <if test="workEmail != null" >
+        work_email,
+      </if>
+      <if test="mobileno1 != null" >
+        mobileno1,
+      </if>
+      <if test="workTel != null" >
+        work_tel,
+      </if>
+      <if test="mobileno2 != null" >
+        mobileno2,
+      </if>
+      <if test="workTelExt != null" >
+        work_tel_ext,
+      </if>
+      <if test="personalEmail != null" >
+        personal_email,
+      </if>
+      <if test="workAddress != null" >
+        work_address,
+      </if>
+      <if test="homeTel != null" >
+        home_tel,
+      </if>
+      <if test="homeAddress != null" >
+        home_address,
+      </if>
+      <if test="expcontPerson != null" >
+        expcont_person,
+      </if>
+      <if test="expcontPsnTel != null" >
+        expcont_psn_tel,
+      </if>
+      <if test="dataFrom != null" >
+        data_from,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="onlineStatus != null" >
+        online_status,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="degree1 != null" >
+        degree1,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="createDt != null" >
+        create_dt,
+      </if>
+      <if test="createId != null" >
+        create_id,
+      </if>
+      <if test="modifyId != null" >
+        modify_id,
+      </if>
+      <if test="modifyBy != null" >
+        modify_by,
+      </if>
+      <if test="modifyDt != null" >
+        modify_dt,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fullName != null" >
+        #{fullName,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null" >
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="staffId != null" >
+        #{staffId,jdbcType=VARCHAR},
+      </if>
+      <if test="workEmail != null" >
+        #{workEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileno1 != null" >
+        #{mobileno1,jdbcType=VARCHAR},
+      </if>
+      <if test="workTel != null" >
+        #{workTel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileno2 != null" >
+        #{mobileno2,jdbcType=VARCHAR},
+      </if>
+      <if test="workTelExt != null" >
+        #{workTelExt,jdbcType=VARCHAR},
+      </if>
+      <if test="personalEmail != null" >
+        #{personalEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="workAddress != null" >
+        #{workAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homeTel != null" >
+        #{homeTel,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null" >
+        #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="expcontPerson != null" >
+        #{expcontPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="expcontPsnTel != null" >
+        #{expcontPsnTel,jdbcType=VARCHAR},
+      </if>
+      <if test="dataFrom != null" >
+        #{dataFrom,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineStatus != null" >
+        #{onlineStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="degree1 != null" >
+        #{degree1,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="createDt != null" >
+        #{createDt,jdbcType=DATE},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyId != null" >
+        #{modifyId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDt != null" >
+        #{modifyDt,jdbcType=DATE},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  
+    <select id="selectByPrimaryKey" parameterType="long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_USER
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  
+      <select id="selectAllUsers"  resultMap="BaseResultMap">
+    select 
+ 	  *
+    from SYS_USER
+  </select>
+</mapper>
