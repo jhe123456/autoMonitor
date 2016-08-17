@@ -51,9 +51,6 @@ public class Result1 implements Serializable {
         this.statusCode = statusCode;
     }
 
-    public Result() {
-
-    }
 
     public static void main(String[] args) {
         System.out.println("--------------");
