@@ -1,244 +1,172 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
-<!-- <html lang="zh"> -->
-<head>
-	
-	<!-- start: Meta -->
-	<meta charset="utf-8">
-	<title>北京移动自动化运维平台</title>
-	<meta name="description" content="北京移动自动化运维平台">
-	<meta name="author" content="H3C">
-	<!-- end: Meta -->
-	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- end: Mobile Specific -->
-	
-	<!-- start: CSS -->
-	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link id="base-style" href="css/style.css" rel="stylesheet">
-	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
-	
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+    <head>
+  <%@include file="head.jsp"%>
+    </head>
+    <!-- END HEAD -->
 
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="css/ie.css" rel="stylesheet">
-	<![endif]-->
-	
-	<!--[if IE 9]>
-		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
-	<![endif]-->
-		
-	<!-- start: Favicon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<!-- end: Favicon -->
-	
-		
-		
-		
-</head>
+    <!-- BEGIN BODY -->
+    <body class="page-header-fixed">
+        <!-- BEGIN HEADER -->
+        <div class="header navbar navbar-inverse navbar-fixed-top">
+            <!-- BEGIN TOP NAVIGATION BAR -->
+            <div class="header-inner">
+                <!-- BEGIN LOGO -->
+                <a class="navbar-brand" href="javascript:;">
+                    <img src="assets/img/logo.png" alt="logo" class="img-responsive" />
+                </a>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <img
+                    src="assets/img/menu-toggler.png" alt="" />
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img alt="" src="assets/img/avatar1_small.jpg"/>
+                            <span class="username"> ${uname } </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="javascript:;" id="trigger_fullscreen">
+                                    <i class="fa fa-move"></i> 全屏
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/logout">
+                                    <i class="fa fa-key"></i> 退出
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END TOP NAVIGATION BAR -->
+        </div>
+        <!-- END HEADER -->
+        <div class="clearfix"></div>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+          <%@include file="menu.jsp"%>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+                    <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    Widget settings form goes here
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn blue">
+                                        Save changes
+                                    </button>
+                                    <button type="button" class="btn default" data-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+                    <!-- BEGIN STYLE CUSTOMIZER -->
+                    <div class="theme-panel hidden-xs hidden-sm">
+                        <div class="toggler"></div>
+                        <div class="toggler-close"></div>
+                        <div class="theme-options">
+                            <div class="theme-option theme-colors clearfix">
+                                <span> 主题颜色 </span>
+                                <ul>
+                                    <li class="color-black current color-default" data-style="default"></li>
+                                    <li class="color-blue" data-style="blue"></li>
+                                    <li class="color-brown" data-style="brown"></li>
+                                    <li class="color-purple" data-style="purple"></li>
+                                    <li class="color-grey" data-style="grey"></li>
+                                    <li class="color-white color-light" data-style="light"></li>
+                                </ul>
+                            </div>
+                            <div class="theme-option">
+                                <span> 布局 </span>
+                                <select class="layout-option form-control input-small">
+                                    <option value="fluid">顺序</option>
+                                    <option value="boxed">盒状</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 标题 </span>
+                                <select class="header-option form-control input-small">
+                                    <option value="fixed">固定</option>
+                                    <option value="default">默认</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 工具栏 </span>
+                                <select class="sidebar-option form-control input-small">
+                                    <option value="fixed">固定</option>
+                                    <option value="default">默认</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 工具栏位置 </span>
+                                <select class="sidebar-pos-option form-control input-small">
+                                    <option value="left">左边</option>
+                                    <option value="right">右边</option>
+                                </select>
+                            </div>
+                            <div class="theme-option">
+                                <span> 页脚 </span>
+                                <select class="footer-option form-control input-small">
+                                    <option value="fixed">固定</option>
+                                    <option value="default">默认</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END STYLE CUSTOMIZER -->
 
-<body>
-		<!-- start: Header -->
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="index"><span>北京移动自动化运维平台</span></a>
-				<%@include file="head.jsp" %> 
-			</div>
-		</div>
-	</div>
-	<!-- start: Header -->
-	
-		<div class="container-fluid-full">
-		<div class="row-fluid">
-				
-			<!-- start: Main Menu -->
-			<%@include file="menu.jsp" %>
-			<noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-			
-			<!-- start: Content -->
-			<div id="content" class="span10">
-			
-			
-			<ul class="breadcrumb">
-				<li>
-					<i class="icon-home"></i>
-					<a href="index">首页</a> 
-					<i class="icon-angle-right"></i>
-				</li>
-<!-- 				<li><a href="#">Dashboard</a></li> -->
-			</ul>
+                    <!-- BEGIN PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                            <h3 class="page-title" id="index-page-title">自动化运维平台</h3>
+                            <!-- END PAGE TITLE & BREADCRUMB-->
+                        </div>
+                    </div>
+                    <!-- END PAGE HEADER-->
 
-			<div class="row-fluid hideInIE8 circleStats">
-				
-				<div class="span2" onTablet="span4" onDesktop="span2">
-                	<div class="circleStatsItemBox yellow">
-						<div class="header">硬盘使用</div>
-						<span class="percent">%</span>
-						<div class="circleStat">
-                    		<input type="text" value="58" class="whiteCircle" />
-						</div>		
-						<div class="footer">
-							<span class="count">
-								<span class="number">20000</span>
-								<span class="unit">MB</span>
-							</span>
-							<span class="sep"> / </span>
-							<span class="value">
-								<span class="number">50000</span>
-								<span class="unit">MB</span>
-							</span>	
-						</div>
-                	</div>
-				</div>
+                    <!-- BEGIN DASHBOARD STATS -->
+                    <div id="main-content"></div>
 
-				<div class="span2" onTablet="span4" onDesktop="span2">
-                	<div class="circleStatsItemBox greenDark">
-						<div class="header">堆内存</div>
-						<span class="percent">%</span>
-                    	<div class="circleStat">
-                    		<input type="text" value="80" class="whiteCircle" />
-						</div>
-						<div class="footer">
-							<span class="count">
-								<span class="number">4000</span>
-								<span class="unit">M</span>
-							</span>
-							<span class="sep"> / </span>
-							<span class="value">
-								<span class="number">6144</span>
-								<span class="unit">M</span>
-							</span>	
-						</div>
-                	</div>
-				</div>
-
-				<div class="span2" onTablet="span4" onDesktop="span2">
-                	<div class="circleStatsItemBox orange">
-						<div class="header">永久代</div>
-						<span class="percent">%</span>
-                    	<div class="circleStat">
-                    		<input type="text" value="50" class="whiteCircle" />
-						</div>
-						<div class="footer">
-							<span class="count">
-								<span class="number">500</span>
-								<span class="unit"></span>
-							</span>
-							<span class="sep"> / </span>
-							<span class="value">
-								<span class="number">1024</span>
-								<span class="unit">M</span>
-							</span>	
-						</div>
-                	</div>
-				</div>
-				<div class="span2 noMargin" onTablet="span4" onDesktop="span2">
-                	<div class="circleStatsItemBox pink">
-						<div class="header">CPU</div>
-						<span class="percent">%</span>
-                    	<div class="circleStat">
-                    		<input type="text" value="83" class="whiteCircle" />
-						</div>
-						<div class="footer">
-							<span class="count">
-								<span class="number">64</span>
-								<span class="unit">GHz</span>
-							</span>
-							<span class="sep"> / </span>
-							<span class="value">
-								<span class="number">3.2</span>
-								<span class="unit">GHz</span>
-							</span>	
-						</div>
-                	</div>
-				</div>
-			</div>		
-						
-			<div class="row-fluid">
-				
-				<div class="widget span3 red" onTablet="span6" onDesktop="span3">
-					
-					<h2><span class="glyphicons pie_chart"><i></i></span> Browsers</h2>
-					
-					<hr>
-					
-					<div class="content">
-						
-						<div class="browserStat big">
-							<img src="img/browser-chrome-big.png" alt="Chrome">
-							<span>34%</span>
-						</div>
-						<div class="browserStat big">
-							<img src="img/browser-firefox-big.png" alt="Firefox">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="img/browser-ie.png" alt="Internet Explorer">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="img/browser-safari.png" alt="Safari">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="img/browser-opera.png" alt="Opera">
-							<span>34%</span>
-						</div>	
-								
-						
-					</div>
-				</div>
-				
-				<div class="widget yellow span4 noMargin" onTablet="span12" onDesktop="span4">
-					<h2><span class="glyphicons fire"><i></i></span> Server Load</h2>
-					<hr>
-					<div class="content">
-						 <div id="serverLoad2" style="height:224px;"></div>
-					</div>
-				</div>
-			
-			</div>
-			
-	</div><!--/.fluid-container-->
-	
-			<!-- end: Content -->
-		</div><!--/#content.span10-->
-		</div><!--/fluid-row-->
-		
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">Ã</button>
-			<h3>Settings</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
-	
-	<div class="clearfix"></div>
-	
-	<footer>
-	<%@include file="foot.jsp" %>
-	</footer>
-</body>
+                    <!-- END PORTLET-->
+                </div>
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+      <%@include file="foot.jsp"%>
+    </body>
+<script src="app/js/index.js" type="text/javascript" ></script>
 </html>

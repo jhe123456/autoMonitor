@@ -1,96 +1,39 @@
 <!DOCTYPE html>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+<base href="<%=basePath%>">
+<meta charset="utf-8" />
+<title>自动化运维平台</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<meta name="MobileOptimized" content="320">
 
-<!-- start: Header Menu -->
-<div class="nav-no-collapse header-nav">
-	<ul class="nav pull-right">
-		<!-- start: Message Dropdown -->
-		<li class="dropdown hidden-phone"><a class="btn dropdown-toggle"
-			data-toggle="dropdown" href="#"> <i
-				class="halflings-icon white envelope"></i>
-		</a>
-			<ul class="dropdown-menu messages">
-				<li class="dropdown-menu-title"><span>短消息</span> <a
-					href="#refresh"><i class="icon-repeat"></i></a></li>
-				<li><a href="#"> <span class="avatar"><img
-							src="img/avatar.jpg" alt="Avatar"></span> <span class="header">
-							<span class="from"> Dennis Ji </span> <span class="time">
-								6 min </span>
-					</span> <span class="message"> Lorem ipsum dolor sit amet
-							consectetur adipiscing elit, et al commore </span>
-				</a></li>
-				<li><a class="dropdown-menu-sub-footer" href="#">全部信息</a></li>
-			</ul></li>
-		<!-- start: User Dropdown -->
-		<li class="dropdown"><a class="btn dropdown-toggle"
-			data-toggle="dropdown" href="#"> <i
-				class="halflings-icon white user"></i> ${uname} <span class="caret"></span>
-		</a>
-			<ul class="dropdown-menu">
-				<li class="dropdown-menu-title"><span>设置</span></li>
-				<li><a href="#"><i class="halflings-icon user"></i>用户信息</a></li>
-				<li><a href="login"><i class="halflings-icon off"></i> 退出</a></li>
-			</ul></li>
-		<!-- end: User Dropdown -->
-	</ul>
-</div>
-<!-- end: Header Menu -->
-</body>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
 
-<!-- start: JavaScript-->
+<!-- BEGIN THEME STYLES -->
+<link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/pages/tasks.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />
+<link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
 
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/jquery-migrate-1.0.0.min.js"></script>
+<link rel="stylesheet" href="assets/plugins/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="assets/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css">
+<!-- END THEME STYLES -->
 
-<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+<%--<link rel="shortcut icon" href="app/img/favicon.ico" />--%>
 
-<script src="js/jquery.ui.touch-punch.js"></script>
 
-<script src="js/modernizr.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/jquery.cookie.js"></script>
-
-<script src='js/fullcalendar.min.js'></script>
-
-<script src='js/jquery.dataTables.min.js'></script>
-
-<script src="js/excanvas.js"></script>
-<script src="js/jquery.flot.js"></script>
-<script src="js/jquery.flot.pie.js"></script>
-<script src="js/jquery.flot.stack.js"></script>
-<script src="js/jquery.flot.resize.min.js"></script>
-
-<script src="js/jquery.chosen.min.js"></script>
-
-<script src="js/jquery.uniform.min.js"></script>
-
-<script src="js/jquery.cleditor.min.js"></script>
-
-<script src="js/jquery.noty.js"></script>
-
-<script src="js/jquery.elfinder.min.js"></script>
-
-<script src="js/jquery.raty.min.js"></script>
-
-<script src="js/jquery.iphone.toggle.js"></script>
-
-<script src="js/jquery.uploadify-3.1.min.js"></script>
-
-<script src="js/jquery.gritter.min.js"></script>
-
-<script src="js/jquery.imagesloaded.js"></script>
-
-<script src="js/jquery.masonry.min.js"></script>
-
-<script src="js/jquery.knob.modified.js"></script>
-
-<script src="js/jquery.sparkline.min.js"></script>
-
-<script src="js/counter.js"></script>
-
-<script src="js/retina.js"></script>
-
-<script src="js/custom.js"></script>
 </html>

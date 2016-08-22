@@ -1,25 +1,70 @@
-<!DOCTYPE html>
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-		<div id="sidebar-left" class="span2">
-				<div class="nav-collapse sidebar-nav">
-					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="index"><i class="icon-bar-chart"></i><span class="hidden-tablet">控制台</span></a></li>	
-						<li><a href="warning"><i class="icon-tasks"></i><span class="hidden-tablet">警报信息</span></a></li>
-						<li><a href="messages"><i class="icon-envelope"></i><span class="hidden-tablet">短消息</span></a></li>
-						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet">日志信息</span></a></li>
-						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
-						 
-						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
-						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
-						<li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
-						<li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
-						<li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-						<li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
-						<li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- end: Main Menu --> 
-</html>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <ul class="page-sidebar-menu" id="page-sidebar-menu">
+            <li class="sidebar-toggler-wrapper">
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                <div class="sidebar-toggler hidden-phone"></div>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            </li>
+
+            <li class="start active">
+                <a href="<%=basePath%>/dashboard" id="btn-dashboard">
+                    <i class="fa fa-home"></i><span class="title"> 首页 </span><span
+                        class="selected"> </span>
+                </a>
+            </li>
+            <li class="start active">
+                <a href="<%=basePath%>/baidu" >
+                    <i class="fa fa-gears"></i><span class="title">服务器配置 </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="javascript:;">
+                    <i class="fa fa-gears"></i><span class="title"> 系统管理 </span><span
+                        class="arrow "> </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="<%=basePath%>/user/userMenu" id="userConfig">
+                            用户管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            角色管理
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            权限管理
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="javascript:;">
+                    <i class="fa fa-user"></i><span class="title"> 个人中心 </span><span
+                        class="arrow "> </span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="javascript:;">
+                            信息修改
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            密码修改
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+</div>
