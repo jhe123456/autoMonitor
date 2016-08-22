@@ -14,4 +14,5 @@ public interface SysUserMapper extends GenericDao<SysUser, Long> {
     List<SysUser> selectAllUsers();
     
     SysUser selectByPrimaryKey(BigDecimal id);
+
 }

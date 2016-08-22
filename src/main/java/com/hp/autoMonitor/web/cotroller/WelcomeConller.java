@@ -28,7 +28,7 @@ public class WelcomeConller {
     @RequestMapping(value="/")
     public ModelAndView firstPage() {
         ModelAndView mv=new ModelAndView();
-        mv.setViewName("login");
+        mv.setViewName("index");
         return  mv;
     }
 
@@ -43,8 +43,18 @@ public class WelcomeConller {
         return  mv;
     }
 
+    /**
+     * 登录页
+     */
+    @RequestMapping(value="/logout")
+    public ModelAndView logout() {
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("login");
+        return  mv;
+    }
+
     @RequestMapping(value="/index",method = {RequestMethod.GET,RequestMethod.POST})
-    public ModelAndView index(ModelMap model){
+    public ModelAndView index(){
     	  ModelAndView mv = new ModelAndView();  
     	  mv.addObject("uname","何自强 先生/小姐");
     	  System.out.println("-------------------");
@@ -53,48 +63,9 @@ public class WelcomeConller {
     	  return mv;
     }
 
- 
-
-
-    @RequestMapping(value="/user/{userId}",method = RequestMethod.GET)
-    public SysUser welcome(@PathVariable String userId,ModelMap model) {//Welcome page, non-rest
-    	System.out.println(userId);
-        SysUser user= userService.selectById(Long.parseLong(userId));
-        return user;
-    }
-
-
-
-    /**
-     * dashboard页
-     */
-    @RequestMapping("/dashboard")
-    public String dashboard() {
-        return "dashboard";
-    }
-
-    /**
-     * 404页
-     */
-    @RequestMapping("/404")
-    public String error404() {
-        return "404";
-    }
-
-    /**
-     * 401页
-     */
-    @RequestMapping("/401")
-    public String error401() {
-        return "401";
-    }
-
-    /**
-     * 500页
-     */
-    @RequestMapping("/500")
-    public String error500() {
-        return "500";
-    }
-
+//    @RequestMapping(value="/user/{userId}",method = RequestMethod.GET)
+//    public SysUser welcome(@PathVariable String userId) {
+//        SysUser user= userService.selectById(Long.parseLong(userId));
+//        return user;
+//    }
 }

@@ -29,11 +29,15 @@ public class SysUserServiceTest {
   @SuppressWarnings("deprecation")
 @Test
   public void test1() {
+      for (int i=0;i<10;i++){
       SysUser user = new SysUser();
-      user.setId(3);
-      user.setUserName("admin");
-      user.setFullName("admin");
+      user.setId(i);
+      user.setUserName("test"+i);
+      user.setFullName("测试"+i);
+      user.setWorkEmail(i+"@gmail.com");
       userService.insert(user);
+
+      }
   }
 
     public static final void main(String[] args){
